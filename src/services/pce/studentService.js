@@ -1,17 +1,17 @@
-import db from '../config/knex.js';
+import db from '../../config/knex.js';
 
-// ✅ Get all students from PCE
+//  Get all students from PCE
 export const getPCEStudents = async () => {
   return await db('pce.pce_student').select('*');
 };
 
-// ✅ Get a single student from PCE
+//  Get a single student from PCE
 export const getPCEStudentById = async (id) => {
   const result = await db('pce.pce_student').where({ student_id: id }).first();
   return result || { message: "Student not found" };
 };
 
-// ✅ Add a new student
+//  Add a new student
 export const addPCEStudent = async (studentData) => {
   const result = await db('pce.pce_student')
     .insert(studentData)
@@ -20,7 +20,7 @@ export const addPCEStudent = async (studentData) => {
   return result[0];
 };
 
-// ✅ Update student data
+//  Update student data
 export const updatePCEStudent = async (id, studentData) => {
   const result = await db('pce.pce_student')
     .where({ student_id: id })
@@ -30,7 +30,7 @@ export const updatePCEStudent = async (id, studentData) => {
   return result[0] || { message: "Student not found" };
 };
 
-// ✅ Delete student
+//  Delete student
 export const deletePCEStudent = async (id) => {
   const result = await db('pce.pce_student')
     .where({ student_id: id })

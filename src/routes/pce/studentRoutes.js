@@ -4,7 +4,7 @@ import {
   addPCEStudent,
   updatePCEStudent,
   deletePCEStudent
-} from '../services/pceService.js';
+} from '../../services/pce/studentService.js';
 
 export default async function (fastify, options) {
   fastify.get('/pce/students', async (req, reply) => {

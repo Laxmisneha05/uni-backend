@@ -1,17 +1,17 @@
 import db from '../config/knex.js';
 
-// ✅ Get all students from PICA
+//  Get all students from PICA
 export const getPICAStudents = async () => {
   return await db('pica.pica_student').select('*');
 };
 
-// ✅ Get a single student from PICA by ID
+//  Get a single student from PICA by ID
 export const getPICAStudentById = async (id) => {
   const result = await db('pica.pica_student').where({ student_id: id }).first();
   return result || { message: "Student not found" };
 };
 
-// ✅ Add a new student to PICA
+//  Add a new student to PICA
 export const addPICAStudent = async (studentData) => {
   const result = await db('pica.pica_student')
     .insert(studentData)
@@ -20,7 +20,7 @@ export const addPICAStudent = async (studentData) => {
   return result[0];
 };
 
-// ✅ Update a student in PICA
+// Update a student in PICA
 export const updatePICAStudent = async (id, studentData) => {
   const result = await db('pica.pica_student')
     .where({ student_id: id })
@@ -30,7 +30,7 @@ export const updatePICAStudent = async (id, studentData) => {
   return result[0] || { message: "Student not found" };
 };
 
-// ✅ Delete a student from PICA
+//  Delete a student from PICA
 export const deletePICAStudent = async (id) => {
   const result = await db('pica.pica_student')
     .where({ student_id: id })
