@@ -1,6 +1,5 @@
-import pool from '../config/db.js';
+import db from '../config/knex.js';
 
 export const getPrograms = async () => {
-  const result = await pool.query('SELECT * FROM users');
-  return result.rows;
+  return await db('users').select('*');
 };
