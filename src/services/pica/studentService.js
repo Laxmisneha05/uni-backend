@@ -1,4 +1,4 @@
-import db from '../config/knex.js';
+import db from '../../config/knex.js';
 
 //  Get all students from PICA
 export const getPICAStudents = async () => {

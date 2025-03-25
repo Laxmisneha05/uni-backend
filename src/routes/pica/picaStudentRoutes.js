@@ -4,7 +4,7 @@ import {
   addPICAStudent, 
   updatePICAStudent, 
   deletePICAStudent 
-} from '../../services/picaService.js';
+} from '../../services/pica/studentService.js';
 
 export default async function (fastify, options) {
   fastify.get('/pica/students', async (req, reply) => {

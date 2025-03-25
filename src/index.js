@@ -13,8 +13,8 @@ registerRoutes(fastify);
 const start = async () => {
     try {
         await fastify.listen({ port: process.env.PORT || 3000, host: '0.0.0.0' });
-        console.log(`🚀 Server running at http://localhost:${process.env.PORT || 3000}`);
-        console.log("🔍 Registered Routes:");
+        console.log(`Server running at http://localhost:${process.env.PORT || 3000}`);
+        console.log("Registered Routes:");
         console.log(fastify.printRoutes());
     } catch (err) {
         fastify.log.error(err);
