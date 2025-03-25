@@ -3,7 +3,7 @@ import { getPCACSStudents,
   addPCACSStudent, 
   updatePCACSStudent, 
   deletePCACSStudent 
-} from '../services/pcacsService.js';
+} from '../../services/pcacsService.js';
 
 export default async function (fastify, options) {
   fastify.get('/pcacs/students', async (req, reply) => {
