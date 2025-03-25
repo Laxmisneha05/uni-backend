@@ -5,8 +5,14 @@ import pceContactRoutes from './pce/pceContactRoutes.js';
 import pceStudentRoutes from './pce/pceStudentRoutes.js';
 import pceDiplomaRoutes from './pce/pceDiplomaRoutes.js';
 import pceDocumentRoutes from './pce/pceDocumentRoutes.js';
+import pceEntranceExamRoutes from './pce/pceEntranceExamRoutes.js';
+import pceFamilyDetailsRoutes from './pce/pceFamilyRoutes.js';
+import pceHscMarksRoutes from './pce/pceHscMarksRoutes.js';
+import pceProgramLevelRoutes from './pce/pceProgramLevelsRoutes.js';
+import pceProgramRoutes from './pce/pceProgramRoutes.js';
+import pcestudentGapRoutes from './pce/pcestudentGapRoutes.js';
 
-// PCaCS Routes
+// PCACS Routes
 import pcacsStudentRoutes from './pcacs/studentRoutes.js';
 
 //PICA Routes
@@ -21,6 +27,13 @@ const registerRoutes = (fastify) => {
     fastify.register(pceContactRoutes, { prefix: '/pce' });
     fastify.register(pceDiplomaRoutes, { prefix: '/pce' });
     fastify.register(pceDocumentRoutes, { prefix: '/pce' });
+    fastify.register(pceEntranceExamRoutes, { prefix: '/pce' });
+    fastify.register(pceFamilyDetailsRoutes, { prefix: '/pce' });
+    fastify.register(pceHscMarksRoutes, { prefix: '/pce' });
+    fastify.register(pceProgramLevelRoutes, { prefix: '/pce' });
+    fastify.register(pceProgramRoutes, { prefix: '/pce' });
+    fastify.register(pcestudentGapRoutes, { prefix: '/pce' });
+
     // PCACS
     fastify.register(pcacsStudentRoutes, { prefix: '/pcacs' });
 
@@ -29,6 +42,8 @@ const registerRoutes = (fastify) => {
     fastify.register(picaContactRoutes, { prefix: '/pica' });
     fastify.register(picaDocumentRoutes, { prefix: '/pica' });
     fastify.register(picaEmpRoutes, { prefix: '/pica' });
+
+
     //Public
     fastify.register(publicRoutes, { prefix: '/public' });
 
