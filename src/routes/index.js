@@ -1,6 +1,6 @@
 import publicRoutes from './publicRoutes.js';
-import pceContactRoutes from './pce/contactRoutes.js';
-import pceStudentRoutes from './pce/studentRoutes.js';
+import pceContactRoutes from './pce/pceContactRoutes.js';
+import pceStudentRoutes from './pce/pceStudentRoutes.js';
 import pcacsStudentRoutes from './pcacs/studentRoutes.js';
 import picaStudentRoutes from './pica/studentRoutes.js';
 
