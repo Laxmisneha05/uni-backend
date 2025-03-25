@@ -20,6 +20,10 @@ import picaStudentRoutes from './pica/picaStudentRoutes.js';
 import picaContactRoutes from './pica/picaContactRoutes.js';
 import picaDocumentRoutes from './pica/picaDocumentRoutes.js';
 import picaEmpRoutes from './pica/picaEmpRoutes.js';
+import picaExamRoutes from './pica/picaExamRoutes.js';
+import picaFamilyRoutes from './pica/picaFamilyRoutes.js';
+import picaHSCMarksRoutes from './pica/picaHSCMarksRoutes.js';
+import picaProgramRoutes from './pica/picaProgramRoutes.js';
 
 const registerRoutes = (fastify) => {
     // PCE
@@ -42,7 +46,10 @@ const registerRoutes = (fastify) => {
     fastify.register(picaContactRoutes, { prefix: '/pica' });
     fastify.register(picaDocumentRoutes, { prefix: '/pica' });
     fastify.register(picaEmpRoutes, { prefix: '/pica' });
-
+    fastify.register(picaExamRoutes, { prefix: '/pica' });
+    fastify.register(picaFamilyRoutes, { prefix: '/pica' });
+    fastify.register(picaHSCMarksRoutes, { prefix: '/pica' });
+    fastify.register(picaProgramRoutes, { prefix: '/pica' });
 
     //Public
     fastify.register(publicRoutes, { prefix: '/public' });
