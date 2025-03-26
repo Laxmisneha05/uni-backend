@@ -13,7 +13,7 @@ import pceProgramRoutes from './pce/pceProgramRoutes.js';
 import pcestudentGapRoutes from './pce/pcestudentGapRoutes.js';
 
 // PCACS Routes
-import pcacsStudentRoutes from './pcacs/studentRoutes.js';
+import pcacsStudentRoutes from './pcacs/pcacsStudentRoutes.js';
 
 //PICA Routes
 import picaStudentRoutes from './pica/picaStudentRoutes.js';

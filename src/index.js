@@ -1,13 +1,17 @@
 import Fastify from 'fastify';
 import dotenv from 'dotenv';
-import registerRoutes from './routes/index.js';
+import publicRoutes from './routes/publicRoutes.js';
+import pceRoutes from './routes/pce/pce_index.js';
+import pcacsRoutes from './routes/pcacs/pcacs_index.js';
 
 dotenv.config();
 
 const fastify = Fastify({ logger: true });
 
 // Register all routes
-registerRoutes(fastify);
+publicRoutes(fastify);
+pceRoutes(fastify);
+pcacsRoutes(fastify);
 
 // Start the server
 const start = async () => {

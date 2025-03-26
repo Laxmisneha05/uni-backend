@@ -10,7 +10,6 @@ export const getPICAContactById = async (contact_id) => {
     return await knex('pica.contact_details').where({ contact_id }).first();
 };
 
-// Add new contact details
 // Add new contact details with validation
 export const addPICAContact = async (data) => {
     if (!/^\d{10}$/.test(data.mobile_student)) {

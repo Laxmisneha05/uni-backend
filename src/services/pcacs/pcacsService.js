@@ -1,4 +1,4 @@
-import db from '../config/knex.js';
+import db from '../../config/knex.js';
 
 export const getPCACSStudents = async () => {
   return await db('pcacs.pcacs_student').select('*');
