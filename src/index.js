@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import publicRoutes from './routes/publicRoutes.js';
 import pceRoutes from './routes/pce/pce_index.js';
 import pcacsRoutes from './routes/pcacs/pcacs_index.js';
+import picaRoutes from './routes/pica/pica_index.js';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const fastify = Fastify({ logger: true });
 publicRoutes(fastify);
 pceRoutes(fastify);
 pcacsRoutes(fastify);
+picaRoutes(fastify);
 
 // Start the server
 const start = async () => {
