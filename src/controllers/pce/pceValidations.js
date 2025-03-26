@@ -19,4 +19,10 @@ export const pceContactValidation = Joi.object({
 
     email_mother: Joi.string().email().allow(null, '')
         .messages({ 'string.email': 'Invalid mother email format' }),
+
+    pincode: Joi.string().pattern(/^[1-9][0-9]{5}$/).required()
+        .messages({
+            'string.pattern.base': 'Invalid Indian pincode. It must be exactly 6 digits and cannot start with 0.',
+            'string.empty': 'Pincode is required.'
+        }),
 });

@@ -1,5 +1,5 @@
 import knex from '../../config/knex.js';
-import { pceContactValidation } from '../../validations/pce_validations.js';
+import { pceContactValidation } from '../../controllers/pce/pceValidations.js';
 
 // Get all contact details
 export const getPCEContacts = async () => {
@@ -11,20 +11,20 @@ export const getPCEContactById = async (contact_id) => {
     return await knex('pce.contact_details').where({ contact_id }).first();
 };
 
-// Add new contact details (Validating only mobile & email)
+// Add new contact details (Validating mobile, email, and pincode)
 export const addPCEContact = async (data) => {
     const { error } = pceContactValidation.validate(data, { allowUnknown: true });
     if (error) {
-        throw new Error(error.details[0].message);  // Throw validation error
+        return { status: 400, message: error.details[0].message };  // Return proper validation error
     }
     return await knex('pce.contact_details').insert(data).returning('*');
 };
 
-// Update contact details (Validating only mobile & email)
+// Update contact details (Validating mobile, email, and pincode)
 export const updatePCEContact = async (contact_id, data) => {
     const { error } = pceContactValidation.validate(data, { allowUnknown: true });
     if (error) {
-        throw new Error(error.details[0].message);
+        return { status: 400, message: error.details[0].message };
     }
     return await knex('pce.contact_details').where({ contact_id }).update(data).returning('*');
 };
